@@ -1,0 +1,24 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - '*'
+    tags:
+      - '[0-9]+.[0-9]+.[0-9]+'
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Check out Code
+        uses: actions/checkout@v2
+
+      - name: Display Context
+        run: cat ${{ github.event_path }}
+
+      - name: Branch Name
+        run: echo ${GITHUB_REF#refs/*/}
+
