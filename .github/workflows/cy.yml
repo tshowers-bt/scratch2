@@ -11,31 +11,31 @@ jobs:
         env:
           PAT: ${{ secrets.SCRATCH_WORKFLOW_DISPATCH_PAT }}
         run: |
-        curl -u ":$PAT" \
-          -X POST \
-          -H "Accept: application/vnd.github.v3+json" \
-          https://api.github.com/repos/tshowers-bt/scratch/actions/workflows/manual.yml/dispatches \
-          -d '{
-            "ref": "master",
-          }'
+          curl -u ":$PAT" \
+            -X POST \
+            -H "Accept: application/vnd.github.v3+json" \
+            https://api.github.com/repos/tshowers-bt/scratch/actions/workflows/manual.yml/dispatches \
+            -d '{
+              "ref": "master",
+            }'
 
       - name: With Default Inputs
         env:
           PAT: ${{ secrets.SCRATCH_WORKFLOW_DISPATCH_PAT }}
         run: |
-        curl -u ":$PAT" \
-          -X POST \
-          -H "Accept: application/vnd.github.v3+json" \
-          https://api.github.com/repos/tshowers-bt/scratch/actions/workflows/manual.yml/dispatches \
-          -d '{
-            "ref": "master",
-            "inputs": {
-              "api_branch": "poleved",
-              "api_build_numaber": "TSETAL"
-              "frontend_branch": "retsam",
-              "frontend_build_numaber": "TSETAL"
-              "profile_branch": "retsam",
-              "profile_build_numaber": "TSETAL"
-            }
-          }'
+          curl -u ":$PAT" \
+            -X POST \
+            -H "Accept: application/vnd.github.v3+json" \
+            https://api.github.com/repos/tshowers-bt/scratch/actions/workflows/manual.yml/dispatches \
+            -d '{
+              "ref": "master",
+              "inputs": {
+                "api_branch": "poleved",
+                "api_build_numaber": "TSETAL"
+                "frontend_branch": "retsam",
+                "frontend_build_numaber": "TSETAL"
+                "profile_branch": "retsam",
+                "profile_build_numaber": "TSETAL"
+              }
+            }'
 
