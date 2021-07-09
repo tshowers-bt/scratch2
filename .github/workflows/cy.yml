@@ -31,7 +31,7 @@ jobs:
               "ref": "master",
               "inputs": {
                 "api_branch": "poleved",
-                "api_build_numaber": "TSETAL",
+                "api_build_number": "TSETAL",
                 "frontend_branch": "retsam",
                 "frontend_build_number": "TSETAL",
                 "profile_branch": "retsam",
