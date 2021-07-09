@@ -11,7 +11,7 @@ jobs:
         env:
           PAT: ${{ secrets.SCRATCH_WORKFLOW_DISPATCH_PAT }}
         run: |
-          curl -u ":$PAT" \
+          curl -i -u ":$PAT" \
             -X POST \
             -H "Accept: application/vnd.github.v3+json" \
             https://api.github.com/repos/tshowers-bt/scratch/actions/workflows/manual.yml/dispatches \
@@ -23,7 +23,7 @@ jobs:
         env:
           PAT: ${{ secrets.SCRATCH_WORKFLOW_DISPATCH_PAT }}
         run: |
-          curl -u ":$PAT" \
+          curl -i /dev/stdout -u ":$PAT" \
             -X POST \
             -H "Accept: application/vnd.github.v3+json" \
             https://api.github.com/repos/tshowers-bt/scratch/actions/workflows/manual.yml/dispatches \
@@ -31,9 +31,9 @@ jobs:
               "ref": "master",
               "inputs": {
                 "api_branch": "poleved",
-                "api_build_numaber": "TSETAL"
+                "api_build_numaber": "TSETAL",
                 "frontend_branch": "retsam",
-                "frontend_build_number": "TSETAL"
+                "frontend_build_number": "TSETAL",
                 "profile_branch": "retsam",
                 "profile_build_number": "TSETAL"
               }
