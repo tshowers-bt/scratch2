@@ -1,0 +1,12 @@
+name: Fail no matter what
+on:
+  push:
+    branches:
+      - *
+jobs:
+  trigger-scratch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Do the failing
+        run: exit 1
+            
