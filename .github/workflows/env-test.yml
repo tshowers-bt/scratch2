@@ -1,0 +1,14 @@
+name: "Release Please Build"
+
+on:
+  push: '*'
+  
+jobs:
+  env-stuff:
+    runs-on: ubuntu
+    steps:
+      - name: Put something in env file
+        run: echo "THEVAR=PIZZA CATS" >> "$GITHUB_ENV"
+      - name: Check the value
+        run: echo "$THEVAR"
+        
