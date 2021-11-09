@@ -6,7 +6,7 @@ on:
   
 jobs:
   env-stuff:
-    runs-on: ubuntu
+    runs-on: ubuntu-latest
     steps:
       - name: Put something in env file
         run: echo "THEVAR=PIZZA CATS" >> "$GITHUB_ENV"
