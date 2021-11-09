@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Put something in env file
-        run: echo "THEVAR=PIZZA CATS" >> "$GITHUB_ENV"
+        run: echo THEVAR=PIZZA CATS >> "$GITHUB_ENV"
       - name: Check the value
         run: echo "$THEVAR"
         
